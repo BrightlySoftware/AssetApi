@@ -1,5 +1,5 @@
 FORMAT: 1A
-HOST: https://v1-businessasset.api.dudesolutions.io
+HOST: https://v1-asset.api.dudesolutions.io
 
 USECOMMONSDKLIBRARY: TRUE
 GENERATEASYNCCODE: TRUE
@@ -9,15 +9,15 @@ USEMODELPOSTFIX: FALSE
 USECONTROLLERPOSTFIX: FALSE
 USEENUMPOSTFIX: FALSE
 USECONSTRUCTORSFORCONFIG: TRUE
-CSHARPDEFAULTNAMESPACE: DSI.SDK.BusinessAsset
-JAVADEFAULTNAMESPACE: io.dudesolutions.businessasset
+CSHARPDEFAULTNAMESPACE: DSI.SDK.Asset
+JAVADEFAULTNAMESPACE: io.dudesolutions.asset
 BRANDLABEL: Dude Solutions, Inc.
 USERAGENT: Dude SDK
 NULLIFY404: TRUE
 VALIDATEREQUIREDPARAMETERS: FALSE
 COLLECTPARAMETERS: TRUE
 
-# Dude Business Asset Api
+# Dude Asset Api
 
 ## Reference
 Good reference document: https://raw.githubusercontent.com/apiaryio/api-blueprint/master/examples/Polls%20API.md
@@ -82,10 +82,10 @@ Any response that does not provide a ```200 OK``` response code should be treate
     + Attributes (Heartbeat)
 
 # Group Files
-The business assets endpoints allows for the access and management of business asset import resources.
+The assets endpoints allows for the access and management of asset import resources.
 
-## Business Asset Import Detail [/accounts/{accountId}/businessassets/import/{id}]
-This endpoint allows business asset import data to be found.
+## Asset Import Detail [/accounts/{accountId}/import/assets/import/{id}]
+This endpoint allows asset import data to be found.
 
 + Parameters
     + accountId: 2 (number, required) - {INT} The account ID the resource belongs to.
@@ -93,10 +93,10 @@ This endpoint allows business asset import data to be found.
 
 ### GET
 + Response 200 (application/json; charset=utf-8)
-    + Attributes (Business Asset Import)
+    + Attributes (Asset Import)
 
-## Business Asset Export [/accounts/{accountId}/export/businessassets]
-This endpoint allows for new Business Asset template data to be created.
+## Asset Export [/accounts/{accountId}/export/assets]
+This endpoint allows for new Asset template data to be created.
 
 + Parameters
     + accountId: 2 (number, required) - {INT} The account ID for the upload to be associated with.
@@ -112,7 +112,7 @@ This endpoint allows for new Business Asset template data to be created.
 Represents the System Information response.
 
 ### Properties
-+ `application`: `Dude Business Asset Api` (string, required) - The name of the application.
++ `application`: `Dude Asset Api` (string, required) - The name of the application.
 + `version` : `1.0.0.0` (string, required) - The assembly version.
 + `apiVersion` : `1.0.0.0` (string, required) - The API version.
 + `vitals` (Heartbeat, required) - The state of the system dependencies.
@@ -122,9 +122,9 @@ Represents the System Information response.
 Represents the API routes.
 
 ### Properties
-+ `endpoint` : `BusinessAssetImport` (string, required) - The name of the endpoint.
++ `endpoint` : `AssetImport` (string, required) - The name of the endpoint.
 + `action` : `Get` (string, required) - The REST action.
-+ `route` : `/accounts/{accountId}/businessassets/import/{id}{?includeAudit}` (string, required) - The route to the endpoint.
++ `route` : `/accounts/{accountId}/import/assets/{id}{?includeAudit}` (string, required) - The route to the endpoint.
 
 ## Heartbeat (object)
 Represents a heartbeat response.
@@ -152,16 +152,16 @@ Represents a heartbeat response.
 ## Base Client Object (object)
 + `id`: 1 (number, required) - {INT} The ID of the API client.
 
-## Business Asset Import (Base Audit Object)
-Represents a business asset import resource with base properties.
+## Asset Import (Base Audit Object)
+Represents a asset import resource with base properties.
 
 ### Properties
 + `id`: 1 (number, required) - {INT} The ID of the import resource.
 + `fileId`: 2 (number, required) - {INT} The ID of the file resource.
-+ `status`: Uploaded (Import Status, required) - The state or status of the business asset import resource.
++ `status`: Uploaded (Import Status, required) - The state or status of the asset import resource.
 + `totalAssets`: 100 (number, required) - {INT} The total number of assets in the import file
-+ `totalAssetsProcessed`: 100 (number, required) - {INT} The total number of assets processed during business asset import.
-+ `totalAssetsImported`: 99 (number, required) - {INT} The total number of assets processed by the business asset import.
++ `totalAssetsProcessed`: 100 (number, required) - {INT} The total number of assets processed during asset import.
++ `totalAssetsImported`: 99 (number, required) - {INT} The total number of assets processed by the asset import.
 
 ## Import Status (enum)
 + Uploaded (string)
@@ -175,7 +175,7 @@ Represents an import log statement
 ### Properties
 + `id`: 1 (number, required) - {LONG} The ID of the log
 + `logType`: Info (Log Type, required) - The type of the log
-+ `message`: Invalid Business Asset Type (string, required) - The log message
++ `message`: Invalid Asset Type (string, required) - The log message
 + `createdDateTime`: `2016-03-04T00:00:00.123Z` (string, required) - {DATETIME} The created date time of the log
 + `sheetName`: Assets (string, optional) - The sheet name associated with the log
 + `rowNumber`: 2 (number, optional) - {INT} The row number associated with the log
