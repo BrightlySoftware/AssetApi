@@ -135,11 +135,11 @@ This endpoint allows asset import data to be found.
     + logType: Info (Log Type, optional) - The type of logs that you would like to retrieve
     + createdDateTimeAfter: `2016-01-01T00:00:00.000Z` (string, optional) - {DATETIME} Retrieves all of the logs after the date/time specified
 
-### POST
+### GET
 + Request (application/json)
     + Attributes (Import Log Create)
 
-+ Response 201 (application/json)
++ Response 200 (application/json)
     + Attributes (Import Log)
 
 ## Asset Import Log Create [/accounts/{accountId}/import/assets/{assetImportId}/logs]
