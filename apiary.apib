@@ -136,11 +136,9 @@ This endpoint allows asset import data to be found.
     + createdDateTimeAfter: `2016-01-01T00:00:00.000Z` (string, optional) - {DATETIME} Retrieves all of the logs after the date/time specified
 
 ### GET
-+ Request (application/json)
-    + Attributes (Import Log Create)
-
 + Response 200 (application/json)
-    + Attributes (Import Log)
+    + Attributes (Base Collection Response)
+        + `data` (array[Import Log], required)
 
 ## Asset Import Log Create [/accounts/{accountId}/import/assets/{assetImportId}/logs]
 Allows for adding a log entry for an asset import job
