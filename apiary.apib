@@ -104,22 +104,12 @@ This endpoint allows for an import to be created and scheduled
 
 + Parameters
     + accountId: 2 (number, required) - {INT} The account ID the resource belongs to.
+
+### Create [POST]
++ Parameters
     + toUpload (file, required) - File to upload.
 
-### POST
-+ Request (multipart/form-data; boundary=---BOUNDARY)
-
-        -----BOUNDARY
-        Content-Disposition: form-data; name="file"; filename="assets.xlsx"
-        Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-        Content-Transfer-Encoding: base64
-
-        /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0a
-        HBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIy
-        MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAABAAEDASIA
-        AhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFAEB
-        AAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AL+AD//Z
-        -----BOUNDARY
++ Request (multipart/form-data)
 
 + Response 201 (application/json)
     + Attributes (Asset Import)
