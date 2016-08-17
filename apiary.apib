@@ -123,22 +123,24 @@ This endpoint allows asset import data to be found.
 + Response 200 (application/json; charset=utf-8)
     + Attributes (Asset Import)
 
-## Asset Import Log Collection [/accounts/{accountId}/import/assets/{assetImportId}/logs{?page,pagesize,orderby}]
+## Asset Import Log Collection [/accounts/{accountId}/import/assets/{assetImportId}/logs{?page,pagesize,orderby,logType,createdDateTimeAfter}]
     Allows for adding a log entry for an asset import job
 
-    + Parameters
-        + accountId: 2 (number, required) - {INT} The account ID the resource belongs to.
-        + assetImportId: 1 (number, required) - {INT} The import ID for the desired resource.
-        + page: 1 (number, optional) - {INT} The page to request from the collection.
-        + pagesize: 1000 (number, optional) - {INT} The number of records to load in a page from the collection.
-        + orderby: AncestorIdPath asc (string, optional) - A string describing the ordering to perform on the collection.
++ Parameters
+    + accountId: 2 (number, required) - {INT} The account ID the resource belongs to.
+    + assetImportId: 1 (number, required) - {INT} The import ID for the desired resource.
+    + page: 1 (number, optional) - {INT} The page to request from the collection.
+    + pagesize: 1000 (number, optional) - {INT} The number of records to load in a page from the collection.
+    + orderby: AncestorIdPath asc (string, optional) - A string describing the ordering to perform on the collection.
+    + logType: Info (Log Type, optional) - The type of logs that you would like to retrieve
+    + createdDateTimeAfter: `2016-01-01T00:00:00.000Z` (string, optional) - {DATETIME} Retrieves all of the logs after the date/time specified
 
-    ### POST
-    + Request (application/json)
-        + Attributes (Import Log Create)
+### POST
++ Request (application/json)
+    + Attributes (Import Log Create)
 
-    + Response 201 (application/json)
-        + Attributes (Import Log)
++ Response 201 (application/json)
+    + Attributes (Import Log)
 
 ## Asset Import Log Create [/accounts/{accountId}/import/assets/{assetImportId}/logs]
 Allows for adding a log entry for an asset import job
