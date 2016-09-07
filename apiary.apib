@@ -233,9 +233,10 @@ Represents a asset import resource with base properties.
 + `id`: 1 (number, required) - {INT} The ID of the import resource.
 + `fileId`: 2 (number, required) - {INT} The ID of the file resource.
 + `status`: Uploaded (Import Status, required) - The state or status of the asset import resource.
-+ `totalAssets`: 100 (number, required) - {INT} The total number of assets in the import file
-+ `totalAssetsProcessed`: 100 (number, required) - {INT} The total number of assets processed during asset import.
-+ `totalAssetsImported`: 99 (number, required) - {INT} The total number of assets processed by the asset import.
++ `total`: 100 (number, required) - {INT} The total number of assets in the import file
++ `totalSuccessful`: 71 (number, required) - {INT} The total number of assets processed during asset import.
++ `totalErrors`: 10 (number, required) - {INT} The total number of assets processed by the asset import.
++ `totalSkipped`: 19 (number, required) - {INT} The total number of assets processed by the asset import.
 + `audit` (Audit, optional) - The audit fields
 
 ## Import Status (enum)
