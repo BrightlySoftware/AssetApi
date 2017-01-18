@@ -84,7 +84,7 @@ Any response that does not provide a ```200 OK``` response code should be treate
 # Group Import
 The assets endpoints allows for the access and management of asset import resources.
 
-## Asset Import Collection [/accounts/{accountId}/import{?page,pagesize,orderby,includeAudit}]
+## Asset Import Collection [/accounts/{accountId}/import/assets{?page,pagesize,orderby,includeAudit}]
 This endpoint allows for the bulk retrieval of asset import jobs
 
 + Parameters
@@ -175,9 +175,9 @@ This endpoint allows for new Asset template data to be created.
     + includeAssets: true (boolean, optional) - Indicates that existing assets should be included in the export of the template
 
 ### GET
-+ Response 200 (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
++ Response 200 (application/octet-stream)
 {HttpResponse}
-    + Attributes (object)
+    + Attributes (Binary)
 
 # Data Structures
 
