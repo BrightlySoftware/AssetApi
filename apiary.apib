@@ -16,6 +16,7 @@ USERAGENT: Dude SDK
 NULLIFY404: TRUE
 VALIDATEREQUIREDPARAMETERS: FALSE
 COLLECTPARAMETERS: TRUE
+ARRAYSERIALIZATION: Plain
 
 # Dude Asset Api
 
@@ -104,7 +105,7 @@ This endpoint allows for an import to be created and scheduled
 
 + Parameters
     + accountId: 2 (number, required) - {INT} The account ID the resource belongs to.
-    + file: data (file, required) - File to upload.
+    + file: data (file, required) - {FILE} File to upload.
 
 ### POST
 + Request (multipart/form-data)
@@ -140,7 +141,10 @@ This endpoint allows asset import data to be found.
     + page: 1 (number, optional) - {INT} The page to request from the collection.
     + pagesize: 1000 (number, optional) - {INT} The number of records to load in a page from the collection.
     + orderby: AncestorIdPath asc (string, optional) - A string describing the ordering to perform on the collection.
-    + logType: Info (array[Log Type], optional) - The type of logs that you would like to retrieve
+    + logType: Info (optional) - The type of logs that you would like to retrieve
+            + Members
+              + Info (string)
+              + Validation (string)
     + createdDateTime: `2016-01-01T00:00:00.000Z` (string, optional) - {DATETIME} Retrieves all of the logs after the date/time specified
     + rowNumber: 2 (number, optional) - {INT} The row number of the logs to request from the collection.
     + sheetNumber: 2 (number, optional) - {INT} The sheet number of the logs to request from the collection.
@@ -176,8 +180,6 @@ This endpoint allows for new Asset template data to be created.
 
 ### GET
 + Response 200 (application/octet-stream)
-{HttpResponse}
-    + Attributes (Binary)
 
 # Data Structures
 
