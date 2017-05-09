@@ -141,7 +141,7 @@ This endpoint allows asset import data to be found.
     + page: 1 (number, optional) - {INT} The page to request from the collection.
     + pagesize: 1000 (number, optional) - {INT} The number of records to load in a page from the collection.
     + orderby: AncestorIdPath asc (string, optional) - A string describing the ordering to perform on the collection.
-    + logType: Info (optional) - The type of logs that you would like to retrieve
+    + logType: Info (enum[string], optional) - {ARRAY} The type of logs that you would like to retrieve
             + Members
               + Info (string)
               + Validation (string)
