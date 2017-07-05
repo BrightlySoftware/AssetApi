@@ -16,6 +16,7 @@ USERAGENT: Dude SDK
 NULLIFY404: TRUE
 VALIDATEREQUIREDPARAMETERS: FALSE
 COLLECTPARAMETERS: TRUE
+ARRAYSERIALIZATION: Plain
 
 # Dude Asset Api
 
@@ -84,7 +85,7 @@ Any response that does not provide a ```200 OK``` response code should be treate
 # Group Import
 The assets endpoints allows for the access and management of asset import resources.
 
-## Asset Import Collection [/accounts/{accountId}/import{?page,pagesize,orderby,includeAudit}]
+## Asset Import Collection [/accounts/{accountId}/import/assets{?page,pagesize,orderby,includeAudit}]
 This endpoint allows for the bulk retrieval of asset import jobs
 
 + Parameters
@@ -104,7 +105,7 @@ This endpoint allows for an import to be created and scheduled
 
 + Parameters
     + accountId: 2 (number, required) - {INT} The account ID the resource belongs to.
-    + file: data (file, required) - File to upload.
+    + file: data (file, required) - {FILE} File to upload.
 
 ### POST
 + Request (multipart/form-data)
@@ -140,7 +141,7 @@ This endpoint allows asset import data to be found.
     + page: 1 (number, optional) - {INT} The page to request from the collection.
     + pagesize: 1000 (number, optional) - {INT} The number of records to load in a page from the collection.
     + orderby: AncestorIdPath asc (string, optional) - A string describing the ordering to perform on the collection.
-    + logType: Info (Log Type, optional) - The type of logs that you would like to retrieve
+    + logType: (array[Log Type], optional) - The type of logs that you would like to retrieve
     + createdDateTime: `2016-01-01T00:00:00.000Z` (string, optional) - {DATETIME} Retrieves all of the logs after the date/time specified
     + rowNumber: 2 (number, optional) - {INT} The row number of the logs to request from the collection.
     + sheetNumber: 2 (number, optional) - {INT} The sheet number of the logs to request from the collection.
@@ -175,9 +176,7 @@ This endpoint allows for new Asset template data to be created.
     + includeAssets: true (boolean, optional) - Indicates that existing assets should be included in the export of the template
 
 ### GET
-+ Response 200 (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
-{HttpResponse}
-    + Attributes (object)
++ Response 200 (application/octet-stream)
 
 # Data Structures
 
@@ -239,6 +238,7 @@ Represents a asset import resource with base properties.
 + `totalSuccessful`: 71 (number, required) - {INT} The total number of assets processed during asset import.
 + `totalErrors`: 10 (number, required) - {INT} The total number of assets processed by the asset import.
 + `totalSkipped`: 19 (number, required) - {INT} The total number of assets processed by the asset import.
++ `validationLogCount`: 10 (number, required) - {INT} The total number of validation logs processed during the asset import.
 + `audit` (Audit, optional) - The audit fields
 
 ## Import Status (enum)
